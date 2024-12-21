@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-net --allow-read src/server.ts"
+  },
+  "imports": {
+    "hono": "npm:hono@^4.6.14",
+    "typed-htmx": "npm:typed-htmx@^0.3.1"
+  }
+}
