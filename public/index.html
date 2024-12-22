@@ -10,8 +10,10 @@
       integrity="sha384-oeUn82QNXPuVkGCkcrInrS1twIxKhkZiFfr2TdiuObZ3n3yIeMiqcRzkIcguaof1"
       crossorigin="anonymous"
     ></script>
+    <link href="./css/output.css" rel="stylesheet">
   </head>
-  <body>
-    <button hx-get="/api/hello">Hello from HTMX!</button>
+  <body class="font-sans">
+    <h1>Project Tracker</h1>
+    <button hx-get="/api/hello" class="bg-slate-300 p-1 rounded-md">Hello from HTMX!</button>
   </body>
 </html>

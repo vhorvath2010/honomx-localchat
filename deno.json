@@ -1,9 +1,11 @@
 {
   "tasks": {
-    "dev": "deno run --watch --allow-net --allow-read src/server.ts"
+    "dev": "deno run --watch --allow-net --allow-read src/server.ts",
+    "tailwind": "deno run -A npm:tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
   },
   "imports": {
     "hono": "npm:hono@^4.6.14",
+    "tailwindcss": "npm:tailwindcss@^3.4.17",
     "typed-htmx": "npm:typed-htmx@^0.3.1"
   }
 }
