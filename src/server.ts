@@ -1,9 +1,8 @@
 import { Hono } from "hono";
-
-const index = await Deno.readTextFile("./public/index.html");
+import { serveStatic } from "hono/deno";
 
 const app = new Hono();
-app.get("/", (c) => c.html(index));
+app.use('*', serveStatic({ root: './public' }));
 
 const api = new Hono();
 api.get("/hello", (c) => c.text("Hello from Hono!"));
