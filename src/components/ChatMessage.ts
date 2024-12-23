@@ -1,4 +1,5 @@
 import { html } from "typed-htmx";
+import { ChatInput } from "./ChatInput.ts";
 
 interface ChatMessageParams {
   readonly message: string;
@@ -18,16 +19,7 @@ export function ChatMessage({
   }
 
   return html`
-    <input
-      id="chat_input"
-      name="chat_message"
-      type="text"
-      class="border-2 rounded-md border-slate-900"
-      autofocus
-      required
-      hx-target="#chat_input"
-      hx-swap="outerHTML"
-    />
+    ${{ $$child: ChatInput() }}
     <div id="chat_room" hx-swap-oob="beforeend">
       <p>you: ${{ $$child: message }}</p>
     </div>
