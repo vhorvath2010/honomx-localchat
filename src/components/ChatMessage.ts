@@ -13,7 +13,7 @@ export function ChatMessage({
   if (!sentByUser) {
     return html`
       <div id="chat_room" hx-swap-oob="beforeend">
-        <p>${{ $$child: message }}</p>
+        <p class="self-end">${{ $$child: message }}</p>
       </div>
     `;
   }

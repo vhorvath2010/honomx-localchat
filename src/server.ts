@@ -19,7 +19,7 @@ app.get(
     return {
       onMessage(event: MessageEvent<string>, ws) {
         const chatMessage = JSON.parse(event.data)["chat_message"];
-        ws.send(ChatMessage({ message: chatMessage, sentByUser: true }));
+        chatService.sendMessage({ sender: ws, message: chatMessage });
       },
       onOpen(_event, ws) {
         console.info("Connecting socket for", connInfo.remote.address);
