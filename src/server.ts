@@ -11,12 +11,11 @@ app.get(
   upgradeWebSocket((_c) => {
     return {
       onMessage(event: MessageEvent<string>, ws) {
-        const messageJson = JSON.parse(event.data);
-        const message = messageJson["chat_message"];
-        ws.send(ChatMessage({ message }));
+        const chatMessage = JSON.parse(event.data)["chat_message"];
+        ws.send(ChatMessage({ message: chatMessage, sentByUser: true }));
       },
     } as WSEvents;
-  }),
+  })
 );
 
 Deno.serve(app.fetch);
