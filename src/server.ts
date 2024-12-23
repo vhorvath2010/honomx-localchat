@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { serveStatic, upgradeWebSocket } from "hono/deno";
-import { html } from "typed-htmx";
+import { WSEvents } from "hono/ws";
+import { ChatMessage } from "./components/ChatMessage.ts";
 
 const app = new Hono();
 app.use("*", serveStatic({ root: "./public" }));
@@ -9,17 +10,12 @@ app.get(
   "/ws",
   upgradeWebSocket((_c) => {
     return {
-      onMessage(event, ws) {
-        console.log("received message", event);
-        ws.send(html`
-          <div id="chat_room" hx-swap-oob="beforeend">
-            <p>
-              message
-            </p>
-          </div>
-          `);
+      onMessage(event: MessageEvent<string>, ws) {
+        const messageJson = JSON.parse(event.data);
+        const message = messageJson["chat_message"];
+        ws.send(ChatMessage({ message }));
       },
-    };
+    } as WSEvents;
   }),
 );
 

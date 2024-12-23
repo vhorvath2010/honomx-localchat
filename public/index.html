@@ -11,16 +11,19 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/htmx-ext-ws@2.0.1/ws.js"></script>
-    <link href="./css/output.css" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet" />
   </head>
   <body class="font-sans px-16">
     <h1 class="text-4xl text-center py-4 font-bold">localchat</h1>
     <section hx-ext="ws" ws-connect="/ws">
       <h2 class="2xl text-center py-2 underline">Chat Room</h2>
-      <div id="chat_room" class="bg-slate-300 h-1/2 w-full"></div>
+      <div id="chat_room" class="bg-slate-300 h-1/2 w-full flex flex-col"></div>
       <form id="form" ws-send>
         <label for="chat_message">Send a Chat:</label>
-        <input name="chat_message" class="border-2 rounded-md border-slate-900">
+        <input
+          name="chat_message"
+          class="border-2 rounded-md border-slate-900"
+        />
       </form>
     </section>
   </body>
