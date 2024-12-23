@@ -1,7 +1,8 @@
 {
   "tasks": {
-    "dev": "deno run --watch --allow-net --allow-read src/server.ts",
-    "tailwind": "deno run -A npm:tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
+    "local": "deno run --watch --allow-net --allow-read src/server.ts",
+    "tailwind": "deno run -A npm:tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
+    "dev": "deno task local & deno task tailwind"
   },
   "imports": {
     "hono": "npm:hono@^4.6.14",

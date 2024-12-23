@@ -6,4 +6,4 @@ A basic RTC app built using Hono and HTMX. The core motivation here is for me to
 
 1. Install [Deno](https://docs.deno.com/runtime/getting_started/installation/)
 2. Install dependencies: `deno install`
-3. Start and watch server: `deno run dev`
+3. Start and watch server: `deno run local`
