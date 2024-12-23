@@ -2,7 +2,7 @@ import { html } from "typed-htmx";
 
 interface ChatMessageParams {
   readonly message: string;
-  readonly sentByUser?: boolean; // Optional boolean parameter
+  readonly sentByUser?: boolean;
 }
 
 export function ChatMessage({
