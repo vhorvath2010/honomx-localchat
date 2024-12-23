@@ -5,7 +5,7 @@ interface ChatMessageParams {
 }
 
 export function ChatMessage({ message }: ChatMessageParams) {
-  return html` <div id="chat_room" hx-swap-oob="beforeend">
+  return html`<div id="chat_room" hx-swap-oob="beforeend">
     <p>${{ $$child: message }}</p>
   </div>`;
 }
