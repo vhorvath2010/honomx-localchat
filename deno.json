@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "start": "deno run --allow-net --allow-read src/server.ts",
     "local": "deno run --watch --allow-net --allow-read src/server.ts",
     "tailwind": "deno run -A npm:tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
     "dev": "deno task local & deno task tailwind"
