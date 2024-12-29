@@ -1,7 +1,6 @@
 import { Hono } from "hono";
 import { getConnInfo, serveStatic, upgradeWebSocket } from "hono/deno";
 import { WSEvents } from "hono/ws";
-import { ChatMessage } from "./components/ChatMessage.ts";
 import { ChatInput } from "./components/ChatInput.ts";
 import { ChatService } from "./chat/chatService.ts";
 
